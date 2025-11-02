@@ -1,0 +1,73 @@
+:root{
+  --azul:#0d47a1; /* azul metalizado */
+  --azul-claro:#1976d2;
+  --gris:#f5f7fb;
+  --texto:#222;
+  --max-width:1100px;
+}
+
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;color:var(--texto);background:#fff;scroll-behavior:smooth}
+.container{max-width:var(--max-width);margin:0 auto;padding:36px 20px}
+
+/* Header / Navbar */
+.header{
+  position:sticky;top:0;z-index:999;background:rgba(255,255,255,0.98);backdrop-filter:saturate(120%) blur(6px);
+  border-bottom:1px solid #eee;
+}
+.navbar{display:flex;align-items:center;justify-content:space-between;max-width:var(--max-width);margin:0 auto;padding:12px 20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:44px}
+.brand h1{font-size:18px;color:var(--azul);letter-spacing:0.4px}
+
+/* nav links */
+.nav-links{display:flex;gap:12px;align-items:center;position:relative}
+.nav-links > a, .nav-links > .drop-btn{color:var(--texto);text-decoration:none;padding:8px 12px;border-radius:6px;font-weight:600;cursor:pointer}
+.nav-links > a:hover, .nav-links > .drop-btn:hover{background:var(--gris)}
+
+/* Dropdown */
+.dropdown{position:relative}
+.dropdown-content{
+  position:absolute;top:44px;left:0;background:#fff;border-radius:8px;box-shadow:0 10px 30px rgba(7,27,73,0.08);
+  min-width:220px;padding:8px;display:none;border:1px solid #eef4ff
+}
+.dropdown-content a{display:block;padding:8px 12px;color:#123; text-decoration:none;border-radius:6px;font-weight:600}
+.dropdown-content a:hover{background:var(--gris)}
+/* show dropdown on hover (desktop) */
+.dropdown:hover .dropdown-content{display:block}
+
+/* Hero */
+.hero{background:linear-gradient(90deg, rgba(13,71,161,0.06), rgba(25,118,210,0.03));padding:56px 0}
+.hero .grid{display:flex;gap:30px;align-items:center}
+.col-left{flex:1}
+.hero h2{font-size:30px;color:var(--azul);margin-bottom:10px}
+.hero p{color:#444;font-size:15px;line-height:1.5;margin-bottom:18px}
+.cta{display:inline-block;background:var(--azul);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:20px}
+.card{background:#fff;border:1px solid #eef4ff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(7,27,73,0.04)}
+.card h3{color:var(--azul);margin-bottom:8px}
+.card p{color:#555;font-size:14px}
+
+/* Sections */
+.section-title{margin:36px 0 12px}
+.section-title h3{color:var(--azul);font-size:20px}
+
+/* Contact form */
+.form-card{background:#fff;border:1px solid #eee;padding:20px;border-radius:8px}
+.input, textarea{width:100%;padding:10px;border-radius:6px;border:1px solid #dfe9f8;margin-bottom:12px}
+textarea{min-height:120px;resize:vertical}
+.btn{background:var(--azul);color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
+
+/* Footer */
+.footer{background:#0b2f66;color:#fff;padding:24px 0;margin-top:40px}
+.footer .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+
+/* Responsive */
+@media(max-width:880px){
+  .hero .grid{flex-direction:column}
+  .nav-links{display:none}
+  .mobile-nav{display:flex;gap:12px}
+}
