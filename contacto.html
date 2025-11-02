@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto — Jurix & Sistem</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="brand"><img src="assets/img/logo.png" alt="Logo" /><h1>JURIX & SISTEM S.A.S.</h1></div>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <div class="dropdown"><span class="drop-btn">Servicios ▾</span><div class="dropdown-content"><a href="juridicos.html">Jurídicos</a><a href="tecnologicos.html">Tecnológicos</a></div></div>
+        <a href="clientes.html">Clientes</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 style="color:var(--azul)">Contáctanos</h2>
+
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px">
+      <div class="form-card">
+        <form action="https://formsubmit.co/jurixsistemsas@outlook.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input class="input" type="text" name="name" placeholder="Nombre completo" required>
+          <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
+          <input class="input" type="text" name="empresa" placeholder="Empresa (opcional)">
+          <input class="input" type="text" name="telefono" placeholder="Teléfono (opcional)">
+          <textarea name="mensaje" placeholder="Escribe tu consulta..." required></textarea>
+          <button class="btn" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+
+      <aside class="form-card">
+        <h4>Información</h4>
+        <p><strong>Jurix & Sistem S.A.S.</strong></p>
+        <p>Calle 84 No. 52-36, Oficina 302 — Barranquilla, Colombia</p>
+        <p>jurixsistemsas@outlook.com</p>
+        <p>jurixsistemsas.contacto@gmail.com</p>
+        <p>WhatsApp: <a href="https://wa.me/573012564208" target="_blank" rel="noopener" style="color:var(--azul)">+57 3012564208</a></p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Jurix & Sistem S.A.S. — Barranquilla, Colombia</p>
+      <p>© <span id="y6"></span> Jurix & Sistem S.A.S.</p>
+    </div>
+  </footer>
+  <script>document.getElementById('y6').textContent = new Date().getFullYear();</script>
+</body>
+</html>
