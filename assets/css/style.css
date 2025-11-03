@@ -70,9 +70,6 @@ textarea{min-height:120px;resize:vertical}
   .hero .grid{flex-direction:column}
   .nav-links{display:none}
   .mobile-nav{display:flex;gap:12px}
-
-  /* tamaño del logo */
-    width: 300px; /* puedes subirlo a 300 si quieres */
-    height: auto;
-
 }
+  /* tamaño del logo */
+.logo {width: 300px; /* puedes subirlo a 300 si quieres */ height: auto;}
