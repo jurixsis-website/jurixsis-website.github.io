@@ -1,173 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JURIX & SISTEM S.A.S.</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .header {
-            background-color: #000;
-            color: #efb810;
-            text-align: center;
-            padding: 20px 0;
-        }
-        .menu-container {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .menu a {
-            font-size: 1.1rem;
-            text-transform: capitalize;
-        }
-        .menu a:hover {
-            color: #fff;
-            background-color: #000;
-        }
-        .welcome-container {
-            background-color: #719AB5;
-            color: black;
-            padding: 40px 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .image-container {
-            background-color: #095689;
-            padding: 40px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        footer {
-            background-color: #2E86C1;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }       
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jurix & Sistem S.A.S. — Inicio</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-
-    <!-- Header -->
-    <header class="header">
+  <header class="header">
+    <nav class="navbar">
+      <div class="brand">
+        <img class="logo" src="assets/img/logo.png" alt="Jurix & Sistem logo">
         <h1>JURIX & SISTEM S.A.S.</h1>
-        <p class="fs-5">CONSULTORIAS</p>
-        <form runat="server">
-        </form>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
 
-    </header>
-
-    <!-- Main Content -->
-    <main class="container my-4">
-        <div class="row">
-            <!-- Menu -->
-            <nav class="col-md-3 mb-3">
-                <div class="menu-container p-3">
-                    <ul class="nav flex-column">
-                        <!-- Inicio -->
-                        <li class="nav-item">
-                                <li><a class="nav-link" href="#" onclick="window.open('index.html')" > Inicio</a></li>
-                         
-                        </li>
-
-                        <!-- Nosotros -->
-                        <li class="nav-item">
-                                <li><a class="nav-link" href="#" onclick="window.open('nosotros.html')" > Nosotros</a></li>
-                            
-                        </li>
-
-                        <!-- Servicios -->
-                        <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#warehouseSubmenu" aria-expanded="false">
-                                Servicios
-                            </a>
-                            <ul class="collapse list-unstyled" id="warehouseSubmenu">
-                                <li><a class="nav-link" href="#" onclick="window.open('frmCategorias.aspx')" >- Juridicos</a></li>
-                                <li><a class="nav-link" href="#" onclick="window.open('frmProductos.aspx')" >- Tecnologicos</a></li>                          
-                            </ul>
-                        </li>
-                       
-
-                        <!-- Negocio -->
-                        <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#businessSubmenu" aria-expanded="false" style="font-palette:dark">
-                                Negocio
-                            </a>
-                            <ul class="collapse list-unstyled" id="businessSubmenu">
-                                <li><a class="nav-link" href="#" onclick="window.open('frmClientes.aspx')" >- Clientes</a></li>
-                                <li><a class="nav-link" href="#" onclick="window.open('frmSolicitudPedidos.aspx')" >- Solicitud de Pedidos</a></li>
-                                <li><a class="nav-link" href="#" onclick="window.open('frmFacturaCliente.aspx')" >- Facturar</a></li>                               
-                            <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#ReportesSubmenu" aria-expanded="false" style="font-palette:dark">
-                                - Reportes
-                            </a>
-                            <ul class="collapse list-unstyled" id="ReportesSubmenu">
-                                         <li><a class="nav-link" href="#" onclick="window.open('frmReporteFactura.aspx')" >* Reporte Facturas</a></li>
-                                         <li><a class="nav-link" href="#" onclick="window.open('frmReporteClientes.aspx')" >* Reporte Clientes</a></li>
-                                         <li><a class="nav-link" href="#" onclick="window.open('frmReporteListaPedido.aspx')" >* Reporte Lista Pedidos</a></li>
-                                         <li><a class="nav-link" href="#" onclick="window.open('frmReporteSolPedido.aspx')" >* Reporte Solicitud Pedidos</a></li>
-
-                            </ul>
-                                </ul>
-
-                       
-                             
-                                </li>
-
-
-                        <!-- Opciones -->
-                        <li class="nav-item">
-                           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#OptionsSubmenu" aria-expanded="false" style="font-palette:dark">
-                                Opciones
-                            </a>
-                            <ul class="collapse list-unstyled" id="OptionsSubmenu">
-                                 <li><a class="nav-link" href="#" onclick="window.open('frmCambioContraseña.aspx')" >- Cambio Contraseña</a></li>                            
-                                 <li><a class="nav-link" href="#" onclick="window.open('frmPruebas.aspx')" >- Pruebas</a></li>                            
-                            </ul>
-
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <!-- Main Content Area -->
-            <div class="col-md-9">
-                <!-- Welcome Section -->
-                <section class="welcome-container mb-4">
-                <h2>Soluciones Legales y Tecnológicas para un mundo que no se detiene</h2>
-                <p>JURIX & SISTEM S.A.S. integra experiencia jurídica y técnica para proteger la operación de su empresa, garantizando cumplimiento normativo, continuidad operativa y seguridad informática.</p>                    <p class="lead"><asp:Label ID="lblMensaje" runat="server" Text="Label" ForeColor="White"></asp:Label></p>
-                </section>
-
-                <!-- Image Section -->
-                <section class="image-container">
-                    <img src="Imagenes/colaboradores.jpg" alt="Colaboradores">
-                </section>
-            </div>
+        <div class="dropdown">
+          <span class="drop-btn">Servicios ▾</span>
+          <div class="dropdown-content">
+            <a href="juridicos.html">Jurídicos</a>
+            <a href="tecnologicos.html">Tecnológicos</a>
+          </div>
         </div>
-    </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 TOV BUSINESS S.A.S. Todos los derechos reservados.</p>
-    </footer>
+        <a href="clientes.html">Clientes</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <section class="hero">
+  <section class="hero">
     <div class="container">
       <div class="grid">
         <div class="col-left">
@@ -200,7 +64,7 @@
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-
-    
 </body>
 </html>
+
+    
