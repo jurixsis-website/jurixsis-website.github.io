@@ -1,51 +1,67 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="es">
 <head>
-<style>
-body {
-  margin: 0;
-  padding: 0;
-}
-
-h2, p {
-  margin: 10px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #333333;
-  display: flex;
-}
-
-ul li a {
-  display: block;
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-ul li a:hover {
-  background-color: #111111;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jurix & Sistem S.A.S. — Inicio</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="brand">
+        <img class="logo" src="assets/img/logo.png" alt="Jurix & Sistem logo">
+        <h1>JURIX & SISTEM S.A.S.</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
 
-<ul>
-  <li><a href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-</ul>
+        <div class="dropdown">
+          <span class="drop-btn">Servicios ▾</span>
+          <div class="dropdown-content">
+            <a href="juridicos.html">Jurídicos</a>
+            <a href="tecnologicos.html">Tecnológicos</a>
+          </div>
+        </div>
 
-<h2>Horizontal Navbar Using Flex</h2>
+        <a href="clientes.html">Clientes</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </nav>
+  </header>
 
-<p>Some text on the website.</p>
+  <section class="hero">
+    <div class="container">
+      <div class="grid">
+        <div class="col-left">
+          <h2>Soluciones Legales y Tecnológicas para un mundo que no se detiene</h2>
+          <p>JURIX & SISTEM S.A.S. integra experiencia jurídica y técnica para proteger la operación de su empresa, garantizando cumplimiento normativo, continuidad operativa y seguridad informática.</p>
+          <a class="cta" href="contacto.html">Solicitar consulta</a>
+          <div class="cards" style="margin-top:20px">
+            <div class="card"><h3>Protección de datos</h3><p>Programas de Habeas Data y adaptación normativa.</p></div>
+            <div class="card"><h3>Administración de redes</h3><p>Diseño y monitoreo de redes empresariales.</p></div>
+            <div class="card"><h3>Soporte y mantenimiento</h3><p>Paquetes mensuales para continuidad operativa.</p></div>
+          </div>
+        </div>
+        <div style="flex:0.9">
+          <img src="assets/img/hero-illustration.png" alt="Imagen servicios" style="width:100%;border-radius:10px;box-shadow:0 8px 24px rgba(13,71,161,0.08)" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-</body>
-</html>
+  <section class="container">
+    <div class="section-title"><h3>¿Por qué elegirnos?</h3></div>
+    <p>Combinamos derecho y tecnología para ofrecer soluciones prácticas, seguras y alineadas a la operación de su negocio.</p>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Jurix & Sistem S.A.S. — Barranquilla, Colombia | jurixsistemsas@outlook.com | WhatsApp: +57 3012564208</p>
+      <p>© <span id="year"></span> Jurix & Sistem S.A.S.</p>
+    </div>
+  </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
