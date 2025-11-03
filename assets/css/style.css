@@ -72,8 +72,7 @@ textarea{min-height:120px;resize:vertical}
   .mobile-nav{display:flex;gap:12px}
 
   /* tamaño del logo */
-.logo {
     width: 300px; /* puedes subirlo a 300 si quieres */
     height: auto;
-}
+
 }
