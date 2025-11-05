@@ -3,94 +3,287 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Servicios Jurídicos — Jurix & Sistem</title>
+  <title>JURIX & SISTEM S.A.S. — Inicio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main CSS (mantén o reemplaza assets/css/style.css con el que te entregué) -->
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Small header-specific styles to ensure the circle logo, hero full-screen and menu layout -->
+  <style>
+    /* Header layout adjustments */
+    .header-top {
+      background: #000;
+      color: #fff;
+      padding: 18px 0 10px;
+    }
+    .brand-row { display:flex; align-items:center; gap:18px; }
+    .logo-circle {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: transparent;
+      border: 4px solid rgba(205,170,109,0.95); /* dorado medio */
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+      overflow:hidden;
+      flex-shrink:0;
+    }
+    .logo-circle img {
+      width:78%;
+      height:auto;
+      display:block;
+    }
+     /* Titulo principal Jurix & Sistem SAS */
+    .brand-title { line-height:1; }
+    .brand-title h1 {
+      margin:0;
+      font-size:30px; /* tamaño A */
+      color: #CDAA6D; /* dorado */
+      font-weight:700;
+      letter-spacing:0.6px;
+    }
+    
+    /* Subtitulo principal Consultorias */
+    .brand-title p { 
+      margin:0;
+      font-size:14px;
+      color:#ffffff;
+      opacity:0.95;
+      margin-top:4px;
+      letter-spacing:1px;
+    }
+
+    /* Menu row (white bg with blue bottom border) */
+    .menu-row {
+      background:#fff;
+      border-bottom:3px solid #2E86C1; /* azul TOV */
+    }
+    .menu-row .nav-link {
+      color:#000;
+      font-weight:600;
+      padding:10px 12px;
+    }
+    .menu-row .nav-link:hover {
+      color:#2E86C1;
+      background:transparent;
+    }
+
+    /* Hero full-screen */
+    .hero {
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding: 40px 0;
+      background: linear-gradient(180deg, #0E2A48 0%, #061628 70%); /* degradado azul petróleo -> azul oscuro */
+      color:#fff;
+    }
+    .hero .left {
+      max-width: 630px;
+    }
+    .hero h2 {
+      font-size:40px;
+      color:#F5F5F5;
+      margin-bottom:12px;
+      line-height:1.05;
+    }
+    .hero p.lead {
+      color: #e6eef6;
+      font-size:16px;
+      margin-bottom:20px;
+    }
+    .btn-primary-cta {
+      background:#CDAA6D;
+      border: 2px solid rgba(205,170,109,0.95);
+      color:#021226;
+      font-weight:700;
+      padding:12px 20px;
+      border-radius:8px;
+    }
+    .btn-primary-cta:hover { background:#b79856; color:#021226; }
+
+    .hero .right img{
+      width:100%;
+      height:auto;
+      border-radius:12px;
+      box-shadow: 0 12px 36px rgba(2,10,24,0.6);
+    }
+
+    /* Cards */
+    .cards { margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:18px;}
+    .service-card {
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.06);
+      padding:18px;
+      border-radius:12px;
+      color:#eef6ff;
+      min-height:110px;
+    }
+    .service-card h3 { color:#CDAA6D; margin-bottom:8px; font-size:18px; }
+    .service-card p { color:#dbeaf8; font-size:14px; }
+
+    /* Why choose us */
+    .why { padding:48px 0; background:#fff; color:#222; border-top:1px solid #eef2f6; border-bottom:1px solid #eef2f6; }
+    .why h3 { color: #0D3B66; margin-bottom:14px; }
+
+    /* Footer */
+    .site-footer {
+      background:#000;
+      color:#CDAA6D;
+      padding:22px 0;
+      margin-top:30px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:992px) {
+      .brand-row { gap:12px; }
+      .logo-circle { width:76px; height:76px; border-width:3px; }
+      .brand-title h1 { font-size:22px; }
+      .hero h2 { font-size:28px; }
+      .hero { padding:30px 0; }
+    }
+  </style>
 </head>
 <body>
 
-<header class="header">
-  <nav class="navbar">
-    <div class="brand">
-      <img src="assets/img/logo.png" alt="Logo" />
-      <div class="brand-text">
-        <h1>JURIX & SISTEM S.A.S.</h1>
-        <span class="sub">CONSULTORÍAS</span>
-      </div>
-    </div>
+  <!-- HEADER TOP (logo + title) -->
+  <header class="header-top">
+    <div class="container">
+      <div class="brand-row">
+        <div class="logo-circle">
+          <img src="assets/img/logo.png" alt="Jurix & Sistem logo">
+        </div>
 
-    <div class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="nosotros.html">Nosotros</a>
-      <div class="dropdown">
-        <span class="drop-btn">Servicios ▾</span>
-        <div class="dropdown-content">
-          <a href="juridicos.html" class="active">Jurídicos</a>
-          <a href="tecnologicos.html">Tecnológicos</a>
+        <div class="brand-title">
+          <h1>JURIX & SISTEM S.A.S.</h1>
+          <p>CONSULTORÍAS</p>
         </div>
       </div>
-      <a href="clientes.html">Clientes</a>
-      <a href="contacto.html">Contacto</a>
     </div>
-  </nav>
-</header>
 
-<section class="hero" style="background-image:url('assets/img/hero-juridico.png');">
-  <div class="hero-overlay">
-    <h2>Servicios Jurídicos</h2>
+    <!-- MENU (centered row) -->
+    <div class="menu-row">
+      <div class="container">
+        <nav class="d-flex justify-content-center align-items-center py-2">
+          <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="nosotros.html">Nosotros</a>
+
+          <!-- Servicios dropdown (simple custom dropdown) -->
+          <div class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+            <ul class="dropdown-menu" aria-labelledby="serviciosDropdown">
+              <li><a class="dropdown-item" href="juridicos.html">Jurídicos</a></li>
+              <li><a class="dropdown-item" href="tecnologicos.html">Tecnológicos</a></li>
+            </ul>
+          </div>
+
+          <a class="nav-link" href="clientes.html">Clientes</a>
+          <a class="nav-link" href="equipo.html">Nuestro Equipo</a>
+          <a class="nav-link" href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / BANNER -->
+<section class="page-hero" style="
+  background-image:url('assets/img/hero-juridico.png');
+  background-size:cover;
+  background-position:center;
+  height:50vh;
+  display:flex;
+  align-items:center;
+  color:#fff;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <h2 style="color:#F5F5F5; font-size:34px; margin-bottom:8px;">Servicios Jurídicos</h2>
+        <p style="color:#dbeaf8; font-size:15px; margin-bottom:12px;">
+          Asesoría legal estratégica con enfoque empresarial y laboral.
+        </p>
+        <a href="contacto.html" class="btn btn-primary-cta">Solicitar consulta</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<main class="container">
+  <!-- HERO (full screen) -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left column -->
+        <div class="col-lg-6 left">
+          <h2>JURIX & SISTEM S.A.S.</h2>
+          <p class="lead">Soluciones legales y tecnológicas para un mundo que no se detiene.</p>
 
-  <section>
-    <h3 style="color:var(--azul)">¿Qué hacemos?</h3>
-    <p>En Jurix & Sistem S.A.S. contamos con un equipo de profesionales especializados en Derecho Laboral y Empresarial, orientados a ofrecer soluciones legales estratégicas y análisis jurídico objetivo para la toma de decisiones corporativas.</p>
+          <a href="contacto.html" class="btn btn-primary-cta d-inline-block">Solicitar consulta</a>
+
+          <div class="cards">
+            
+            <div class="service-card">
+              <h3>Asesoría jurídica</h3>
+              <p>Contratos, cumplimiento laboral y representación ante autoridades (detalle a convenir).</p>
+            </div>
+            
+            <div class="service-card">
+              <h3>Protección de datos</h3>
+              <p>Programas de Habeas Data, políticas y adaptación normativa para mitigar riesgos legales.</p>
+            </div>
+
+            <div class="service-card">
+              <h3>Administración de redes</h3>
+              <p>Diseño, configuración y monitoreo continuo de redes empresariales y segmentación segura.</p>
+            </div>
+
+            <div class="service-card">
+              <h3>Soporte y mantenimiento</h3>
+              <p>Paquetes de mantenimiento preventivo y correctivo para garantizar continuidad operativa.</p>
+            </div>
+            
+            <div class="service-card">
+              <h3>Desarrollo web y Software</h3>
+              <p>Desarrollo de páginas corporativas y soluciones a la medida.</p>
+            </div>
+
+            
+          </div>
+        </div>
+
+        <!-- Right column (illustration) -->
+        <div class="col-lg-6 right">
+          <img src="assets/img/hero-illustration.png" alt="Ilustración legal-tech">
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section style="margin-top:40px">
-    <h3 style="color:var(--azul)">Servicios Jurídicos disponibles</h3>
-
-    <div class="servicio-box">
-      <h4>Asesoría Especializada en Derecho Laboral</h4>
-      <p>* * *</p>
+  <!-- WHY CHOOSE US -->
+  <section class="why">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h3>¿Por qué elegirnos?</h3>
+          <p>Combinamos experiencia jurídica y capacidades tecnológicas para entregar soluciones integradas que protegen los activos legales y digitales de su empresa, garantizando cumplimiento normativo, continuidad operativa y respuesta ágil frente a incidentes.</p>
+        </div>
+      </div>
     </div>
-
-    <div class="servicio-box">
-      <h4>Asesoría Legal Empresarial</h4>
-      <p>* * *</p>
-    </div>
-
-    <div class="servicio-box">
-      <h4>Elaboración y revisión de contratos</h4>
-      <p>* * *</p>
-    </div>
-
-    <div class="servicio-box">
-      <h4>Capacitación en Normatividad Laboral</h4>
-      <p>* * *</p>
-    </div>
-
-    <div class="servicio-box">
-      <h4>Representación Jurídica</h4>
-      <p>* * *</p>
-    </div>
-
-    <div class="servicio-box">
-      <h4>Atención en Derecho de Familia, Civil y Comercial</h4>
-      <p>* * *</p>
-    </div>
-
   </section>
 
-</main>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p style="margin:0;">Jurix & Sistem S.A.S. — Barranquilla, Colombia | jurixsistemsas@outlook.com - jurixsistemsas.contacto@gmail.com | WhatsApp: +57 3012564208</p>
+      <p style="margin:6px 0 0">© <span id="year"></span> JURIX & SISTEM S.A.S.</p>
+    </div>
+  </footer>
 
-<footer class="footer">
-  <div class="container">
-    <p>Jurix & Sistem S.A.S. — Barranquilla, Colombia</p>
-    <p>© <span id="y5"></span> Jurix & Sistem S.A.S.</p>
-  </div>
-</footer>
-<script>document.getElementById('y5').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
