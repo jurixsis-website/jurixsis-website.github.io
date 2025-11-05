@@ -3,55 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Clientes — JURIX & SISTEM S.A.S.</title>
+  <title>Clientes — Jurix & Sistem</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-
   <header class="header">
     <nav class="navbar">
-      <div class="brand">
-        <img class="logo" src="assets/img/logo.png" alt="Jurix & Sistem logo">
-        <div>
-          <h1>JURIX & SISTEM S.A.S.</h1>
-          <p class="subt">CONSULTORÍAS</p>
-        </div>
-      </div>
-
+      <div class="brand"><img src="assets/img/logo.png" alt="Logo" /><h1>JURIX & SISTEM S.A.S.</h1></div>
       <div class="nav-links">
         <a href="index.html">Inicio</a>
         <a href="nosotros.html">Nosotros</a>
-        <div class="dropdown">
-          <span class="drop-btn">Servicios ▾</span>
-          <div class="dropdown-content">
-            <a href="juridicos.html">Jurídicos</a>
-            <a href="tecnologicos.html">Tecnológicos</a>
-          </div>
-        </div>
-        <a class="active" href="clientes.html">Clientes</a>
+        <div class="dropdown"><span class="drop-btn">Servicios ▾</span><div class="dropdown-content"><a href="juridicos.html">Jurídicos</a><a href="tecnologicos.html">Tecnológicos</a></div></div>
+        <a href="clientes.html">Clientes</a>
         <a href="contacto.html">Contacto</a>
       </div>
     </nav>
   </header>
 
-  <main class="container" style="margin-top:50px">
-    <h2 style="text-align:center;color:var(--azul)">CLIENTES</h2>
-    <p style="text-align:center;margin-top:10px;color:var(--gris)">
-      En proceso de actualización de portafolio.
-    </p>
-
-    <div style="margin-top:40px">
-      <p>Puedes listar aquí clientes, alianzas o casos de éxito. Si prefieres, puedes dejar esta página como “En actualización” mientras recopilas contenido.</p>
-    </div>
+  <main class="container">
+    <h2 style="color:var(--azul)">Clientes y Alianzas</h2>
+    <p>Aquí puedes listar clientes, alianzas o casos de éxito. Al inicio puedes poner “Clientes: En proceso de actualización” si prefieres no publicar nombres.</p>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>Jurix & Sistem S.A.S. — Barranquilla, Colombia | jurixsistemsas@outlook.com | WhatsApp: +57 3012564208</p>
-      <p>© <span id="year"></span> Jurix & Sistem S.A.S.</p>
+      <p>Jurix & Sistem S.A.S. — Barranquilla, Colombia</p>
+      <p>© <span id="y5"></span> Jurix & Sistem S.A.S.</p>
     </div>
   </footer>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('y5').textContent = new Date().getFullYear();</script>
 </body>
 </html>
