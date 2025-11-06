@@ -94,3 +94,23 @@ textarea{min-height:120px;resize:vertical}
 }
   /* tamaño del logo */
 .logo {width: auto; /* puedes subirlo a 300 si quieres */ height: 300px;}
+
+/* ---- ajustes tarjetas juridicos ---- */
+.page-services-area {
+  background:#f7f9fb;
+  padding:50px 0;
+}
+
+.page-services-area .service-card {
+  background:#ffffff;
+  border:1px solid #e1e6eb;
+  color:#123;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+.page-services-area .service-card h3 {
+  color:#0D3B66;
+}
+.page-services-area .service-card p {
+  color:#4b5b6c;
+}
+
