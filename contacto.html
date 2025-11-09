@@ -258,24 +258,6 @@ document.getElementById("formContacto").addEventListener("submit", function(e){
   
 </body>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const sendBtn = document.getElementById("btnEnviarContacto");
-  const modalSuccess = new bootstrap.Modal(document.getElementById("modalSuccess"));
-  
-  sendBtn.addEventListener("click", function() {
-    // aquí iría el código de la validación y envío real
-    // por ahora solo lanzamos el modal inmediatamente
-
-    modalSuccess.show();
-  });
-
-  // cuando cierre el modal → refresh de la página
-  document.getElementById("btnCerrarModalSuccess").addEventListener("click", function() {
-    location.reload();
-  });
-});
-</script>
 
   <!-- MODAL ÉXITO -->
 <div class="modal fade" id="modalSuccess" tabindex="-1">
