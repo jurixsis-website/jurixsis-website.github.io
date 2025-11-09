@@ -198,6 +198,8 @@
 
     <div style="display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px">
       <div class="form-card">
+
+        
        <!-- FORMULARIO CONTACTO -->
         <form action="https://formsubmit.co/jurixsistemsas.contacto@gmail.com" method="POST">
 
@@ -254,17 +256,30 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-document.getElementById("contacto.html").addEventListener("submit", function(e){
+document.getElementById("formContacto").addEventListener("submit", function(e){
   const nombre   = document.querySelector('input[name="name"]');
   const email    = document.querySelector('input[name="email"]');
   const mensaje  = document.querySelector('textarea[name="mensaje"]');
 
-  // validar si están vacíos
   if(nombre.value.trim()=="" || email.value.trim()=="" || mensaje.value.trim()==""){
-    e.preventDefault();  // no envía
+    e.preventDefault();
     alert("Por favor completa Nombre, Correo y Mensaje antes de enviar.");
-    return false;
   }
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const params = new URLSearchParams(window.location.search);
+  if(params.get("sent") === "true"){
+      const modalSuccess = new bootstrap.Modal(document.getElementById('modalSuccess'));
+      modalSuccess.show();
+  }
+
+  // botón cerrar → recarga la misma página sin el ?sent=true
+  document.getElementById("btnCerrarModalSuccess").addEventListener('click', ()=>{
+    window.location.href = "contacto.html";
+  });
 });
 </script>
 
