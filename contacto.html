@@ -200,29 +200,20 @@
       <div class="form-card">
        <!-- FORMULARIO CONTACTO -->
         <form action="https://formsubmit.co/e0106423869532eb22f4e0fc9a5df9f2" method="POST">
-  
-        <!-- evita captcha -->
-        <input type="hidden" name="_captcha" value="false">
-      
-        <!-- vuelve a la misma página con ?sent=true -->
-        <input type="hidden" name="_next" value="https://jurixsis-website.github.io/contacto.html?sent=true">
-          
-         <!-- OBSERVACIÓN: este hidden evita captcha -->
-         <input type="hidden" name="_captcha" value="false">
 
-         <!-- OBSERVACIÓN: _next vacío para que NO redireccione a otra página -->
-         <input type="hidden" name="_next" value="">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://jurixsis-website.github.io/contacto.html?sent=true">
+        
+          <input class="input" type="text" name="name" placeholder="Nombre completo" required>
+          <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
+          <input class="input" type="text" name="empresa" placeholder="Empresa (opcional)">
+          <input class="input" type="text" name="telefono" placeholder="Teléfono (opcional)">
+          <textarea name="mensaje" placeholder="Escribe tu consulta..." required></textarea>
+        
+          <button id="btnEnviarContacto" class="btn" type="submit" style="background:#0D3B66;color:#fff;">Enviar</button>
+        
+        </form>
 
-        <input class="input" type="text" name="name" placeholder="Nombre completo" required>
-        <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
-        <input class="input" type="text" name="empresa" placeholder="Empresa (opcional)">
-        <input class="input" type="text" name="telefono" placeholder="Teléfono (opcional)">
-        <textarea name="mensaje" placeholder="Escribe tu consulta..." required></textarea>
-
-        <!-- OBSERVACIÓN: id del botón para poder disparar el modal -->
-        <button id="btnEnviarContacto" class="btn" type="submit" style="background:#0D3B66;color:#fff;">Enviar</button>
-
-      </form>
 
       </div>
 
