@@ -213,9 +213,22 @@
           <button id="btnEnviarContacto" class="btn" type="submit" style="background:#0D3B66;color:#fff;">Enviar</button>
         
         </form>
-
-
       </div>
+
+       <!-- MODAL ÉXITO -->
+<div class="modal fade" id="modalSuccess" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border:0; border-radius:12px;">
+      <div class="modal-body text-center p-4">
+        <p style="font-size:18px; font-weight:600; margin:0;">✅ Tu mensaje ha sido enviado exitosamente.</p>
+
+        <button id="btnCerrarModalSuccess" type="button" class="btn mt-4" style="background:#0D3B66; color:#fff;">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
       <div class="container my-4 text-center" style="font-size:1.1rem;">
           <p><i class="fa-solid fa-location-dot"></i> Calle 120 No. 31-86 — Barranquilla, Colombia</p>
@@ -259,19 +272,6 @@ document.getElementById("contacto.html").addEventListener("submit", function(e){
 </body>
 
 
-  <!-- MODAL ÉXITO -->
-<div class="modal fade" id="modalSuccess" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style="border:0; border-radius:12px;">
-      <div class="modal-body text-center p-4">
-        <p style="font-size:18px; font-weight:600; margin:0;">✅ Tu mensaje ha sido enviado exitosamente.</p>
-
-        <button id="btnCerrarModalSuccess" type="button" class="btn mt-4" style="background:#0D3B66; color:#fff;">
-          Cerrar
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+ 
   
 </html>
