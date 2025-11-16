@@ -202,17 +202,37 @@
         
        <!-- FORMULARIO CONTACTO -->
         <!-- <form action="https://formsubmit.co/jurixsistemsas.contacto@gmail.com" method="POST"> -->
-     <form id="formContacto">
-          <input class="input" type="text" name="name" placeholder="Nombre completo" required>
-          <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
-          <input class="input" type="text" name="empresa" placeholder="Empresa (opcional)">
-          <input class="input" type="text" name="telefono" placeholder="Teléfono (opcional)">
-          <textarea name="mensaje" placeholder="Escribe tu consulta..." required></textarea>
+<div style="display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px">
+
+  <!-- COLUMNA IZQUIERDA: FORM -->
+  <div class="form-card">
+
+    <form id="formContacto">
+      <input class="input" type="text" name="name" placeholder="Nombre completo" required>
+      <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
+      <input class="input" type="text" name="empresa" placeholder="Empresa (opcional)">
+      <input class="input" type="text" name="telefono" placeholder="Teléfono (opcional)">
+      <textarea name="mensaje" placeholder="Escribe tu consulta..." required></textarea>
 
       <button id="btnEnviarContacto" class="btn" type="submit" style="background:#0D3B66;color:#fff;">
         Enviar
       </button>
-     </form>
+    </form>
+
+  </div>
+
+  <!-- COLUMNA DERECHA: DATOS DE CONTACTO -->
+  <div>
+      <div class="container my-3" style="font-size:1.1rem; text-align:justify;">
+          <p><i class="fa-solid fa-location-dot"></i> Calle 120 No. 31-86 — Barranquilla, Colombia</p>
+          <p><i class="fa-solid fa-envelope"></i> jurixsistemsas@outlook.com</p>
+          <p><i class="fa-solid fa-envelope-circle-check"></i> jurixsistemsas.contacto@gmail.com</p>
+          <p><i class="fa-brands fa-whatsapp"></i> +57 3012564208</p>
+      </div>
+  </div>
+
+</div>
+        
 <p id="statusMsg"></p>
 
 <script>
@@ -262,15 +282,7 @@ document.getElementById("formContacto").addEventListener("submit", async functio
       </div>
     </div>
   </div>
-</div>
-
-     <div class="container my-3" style="font-size:1.1rem; text-align:justify;">
-          <p><i class="fa-solid fa-location-dot"></i> Calle 120 No. 31-86 — Barranquilla, Colombia</p>
-          <p><i class="fa-solid fa-envelope"></i> jurixsistemsas@outlook.com</p>
-          <p><i class="fa-solid fa-envelope-circle-check"></i> jurixsistemsas.contacto@gmail.com</p>
-          <p><i class="fa-brands fa-whatsapp"></i> +57 3012564208</p>
-     </div>
-
+</div> 
     </div>
   </main>
 
