@@ -202,43 +202,48 @@
         
        <!-- FORMULARIO CONTACTO -->
         <!-- <form action="https://formsubmit.co/jurixsistemsas.contacto@gmail.com" method="POST"> -->
-       <form id="contactForm">
-  <input type="text" name="nombre" id="nombre" placeholder="Tu nombre" required />
-  <input type="email" name="email" id="email" placeholder="Tu correo" required />
-  <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje" required></textarea>
-  <button type="submit">Enviar</button>
-</form>
+     <form id="formContacto">
+          <input class="input" type="text" name="name" placeholder="Nombre completo" required>
+          <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
+          <input class="input" type="text" name="empresa" placeholder="Empresa (opcional)">
+          <input class="input" type="text" name="telefono" placeholder="Teléfono (opcional)">
+          <textarea name="mensaje" placeholder="Escribe tu consulta..." required></textarea>
 
+      <button id="btnEnviarContacto" class="btn" type="submit" style="background:#0D3B66;color:#fff;">
+        Enviar
+      </button>
+     </form>
 <p id="statusMsg"></p>
 
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbx0c2VZMQAoqAeuF3EXLrIH4kZHN8t3Fey-RWv13bY-wRb81E7LlopHwy8hTqk2mB0/exec";
-
-document.getElementById("contactForm").addEventListener("submit", async (e) => {
+document.getElementById("formContacto").addEventListener("submit", async function(e){
   e.preventDefault();
 
-  const data = {
-    nombre: document.getElementById("nombre").value,
-    email: document.getElementById("email").value,
-    mensaje: document.getElementById("mensaje").value
-  };
+  const form = e.target;
 
-  const status = document.getElementById("statusMsg");
-  status.innerText = "Enviando...";
+  const nombre   = form.name.value.trim();
+  const correo   = form.email.value.trim();
+  const mensaje  = form.mensaje.value.trim();
 
-  try {
-    const res = await fetch(scriptURL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    });
+  if(!nombre || !correo || !mensaje){
+    alert("Por favor completa Nombre, Correo y Mensaje antes de enviar.");
+    return;
+  }
 
-    status.innerText = "¡Mensaje enviado con éxito!";
-    document.getElementById("contactForm").reset();
+  // enviando datos al Apps Script
+  const scriptURL = "https://script.google.com/macros/s/AKfycbx0c2VZMQAoqAeuF3EXLrIH4kZHN8t3Fey-RWv13bY-wRb81E7LlopHwy8hTqk2mB0/exec";  // <-- Pega aquí tu URL de Google Apps Script
 
-  } catch (err) {
-    status.innerText = "Error al enviar. Intenta nuevamente.";
+  try{
+    await fetch(scriptURL, { method: "POST", body: new FormData(form) });
+
+    // Mostrar modal de éxito
+    const modalSuccess = new bootstrap.Modal(document.getElementById('modalSuccess'));
+    modalSuccess.show();
+
+    form.reset();
+
+  } catch (error){
+    alert("Error al enviar el mensaje. Intenta nuevamente.");
   }
 });
 </script>
