@@ -11,167 +11,210 @@
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-  <!-- CSS Principal -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
-    .header-top { background:#000; color:#fff; padding:18px 0 10px; }
-    .brand-row { display:flex; align-items:center; gap:18px; }
-    .logo-circle {
-      width:96px; height:96px; border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      border:4px solid rgba(205,170,109,0.95);
-      box-shadow:0 6px 18px rgba(0,0,0,0.35);
-      overflow:hidden;
-    }
-    .logo-circle img { width:78%; }
-    .brand-title h1 { margin:0; font-size:30px; color:#CDAA6D; font-weight:700; }
-    .brand-title p { margin:0; color:#fff; opacity:.95; font-size:14px; }
-
-    .menu-row { background:#fff; border-bottom:3px solid #2E86C1; }
-    .menu-row .nav-link { color:#000; font-weight:600; padding:10px 12px; }
-    .menu-row .nav-link:hover { color:#2E86C1; }
-
-    .site-footer {
-      background:#000; color:#CDAA6D;
-      padding:22px 0; margin-top:30px;
-    }
-
-    .form-card {
-      background:#fff;
-      padding:20px;
-      border-radius:10px;
-      border:1px solid #ddd;
-      box-shadow:0 4px 12px rgba(0,0,0,0.07);
-    }
-
-    .input, textarea {
-      width:100%; padding:10px; margin-bottom:12px;
-      border:1px solid #ccc; border-radius:6px;
-    }
-
+    /* (Pequeños estilos locales para el formulario) */
+    .form-card { background:#fff; padding:20px; border-radius:10px; border:1px solid #ddd; box-shadow:0 4px 12px rgba(0,0,0,0.07); }
+    .input, textarea { width:100%; padding:10px; margin-bottom:12px; border:1px solid #ccc; border-radius:6px; }
     textarea { min-height:120px; }
   </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header class="header-top">
-  <div class="container">
-    <div class="brand-row">
-      <div class="logo-circle">
-        <img src="assets/img/logo.png" alt="Jurix & Sistem logo">
-      </div>
-      <div class="brand-title">
-        <h1>JURIX & SISTEM S.A.S.</h1>
-        <p>CONSULTORÍAS</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="menu-row">
+  <!-- HEADER (mantén tu header original) -->
+  <header class="header-top">
     <div class="container">
-      <nav class="d-flex justify-content-center align-items-center py-2">
-        <a class="nav-link" href="index.html">Inicio</a>
-        <a class="nav-link" href="nosotros.html">Nosotros</a>
-
-        <div class="nav-item dropdown mx-2">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Servicios</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="juridicos.html">Jurídicos</a></li>
-            <li><a class="dropdown-item" href="tecnologicos.html">Tecnológicos</a></li>
-          </ul>
+      <div class="brand-row">
+        <div class="logo-circle">
+          <img src="assets/img/logo.png" alt="Jurix & Sistem logo">
         </div>
-
-        <a class="nav-link" href="clientes.html">Clientes</a>
-        <a class="nav-link" href="equipo.html">Nuestro Equipo</a>
-        <a class="nav-link" href="contacto.html">Contacto</a>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<!-- CONTENIDO -->
-<main class="container">
-  <h2 style="color:var(--azul)">Contáctanos</h2>
-
-  <div style="display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px">
-
-    <!-- FORMULARIO -->
-    <div class="form-card">
-      <form id="formContacto" action="https://formsubmit.co/e0106423869532eb22f4e0fc9a5df9f2" method="POST">
-        
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://jurixsis-website.github.io/contacto.html?sent=true">
-
-        <input class="input" type="text" name="name" placeholder="Nombre completo" required>
-        <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
-        <input class="input" type="text" name="empresa" placeholder="Empresa (opcional)">
-        <input class="input" type="text" name="telefono" placeholder="Teléfono (opcional)">
-        <textarea name="mensaje" placeholder="Escribe tu consulta..." required></textarea>
-
-        <button class="btn" type="submit" style="background:#0D3B66;color:#fff;width:100%;">Enviar</button>
-      </form>
+        <div class="brand-title">
+          <h1>JURIX & SISTEM S.A.S.</h1>
+          <p>CONSULTORÍAS</p>
+        </div>
+      </div>
     </div>
 
-    <!-- DATOS DE CONTACTO -->
-    <div class="container my-4" style="font-size:1.1rem;">
-      <p><i class="fa-solid fa-location-dot"></i> Calle 120 No. 31-86 — Barranquilla, Colombia</p>
-      <p><i class="fa-solid fa-envelope"></i> jurixsistemsas@outlook.com</p>
-      <p><i class="fa-solid fa-envelope-circle-check"></i> jurixsistemsas.contacto@gmail.com</p>
-      <p><i class="fa-brands fa-whatsapp"></i> +57 3012564208</p>
+    <div class="menu-row">
+      <div class="container">
+        <nav class="d-flex justify-content-center align-items-center py-2">
+          <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="nosotros.html">Nosotros</a>
+          <div class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Servicios</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="juridicos.html">Jurídicos</a></li>
+              <li><a class="dropdown-item" href="tecnologicos.html">Tecnológicos</a></li>
+            </ul>
+          </div>
+          <a class="nav-link" href="clientes.html">Clientes</a>
+          <a class="nav-link" href="equipo.html">Nuestro Equipo</a>
+          <a class="nav-link" href="contacto.html">Contacto</a>
+        </nav>
+      </div>
     </div>
+  </header>
 
-  </div>
-</main>
+  <!-- MAIN -->
+  <main class="container">
+    <h2 style="color:var(--azul)">Contáctanos</h2>
 
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px">
 
-<!-- MODAL ÉXITO -->
-<div class="modal fade" id="modalSuccess" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style="border:0; border-radius:12px;">
-      <div class="modal-body text-center p-4">
-        <p style="font-size:18px; font-weight:600; margin:0;">
-          ✅ Tu mensaje ha sido enviado exitosamente.
-        </p>
-        <button id="btnCerrarModalSuccess" type="button" class="btn mt-4" style="background:#0D3B66; color:#fff;">
-          Cerrar
-        </button>
+      <!-- COLUMNA IZQUIERDA: FORM -->
+      <div class="form-card">
+        <!-- NOTE: No action attribute — manejamos envío vía JS a Google Apps Script -->
+        <form id="formContacto" novalidate>
+          <input class="input" type="text" name="name" id="name" placeholder="Nombre completo" required>
+          <input class="input" type="email" name="email" id="email" placeholder="Correo electrónico" required>
+          <input class="input" type="text" name="empresa" id="empresa" placeholder="Empresa (opcional)">
+          <input class="input" type="text" name="telefono" id="telefono" placeholder="Teléfono (opcional)">
+          <textarea name="mensaje" id="mensaje" placeholder="Escribe tu consulta..." required></textarea>
+
+          <button id="btnEnviarContacto" class="btn" type="submit" style="background:#0D3B66;color:#fff;width:100%;">Enviar</button>
+
+          <!-- lugar para mensajes de estado -->
+          <div id="statusMsg" style="margin-top:12px; font-size:0.95rem;"></div>
+        </form>
+      </div>
+
+      <!-- COLUMNA DERECHA: DATOS -->
+      <div>
+        <div class="container my-3" style="font-size:1.1rem; text-align:justify;">
+          <p><i class="fa-solid fa-location-dot" style="margin-right:6px;"></i> Calle 120 No. 31-86 — Barranquilla, Colombia</p>
+          <p><i class="fa-solid fa-envelope" style="margin-right:6px;"></i> jurixsistemsas@outlook.com</p>
+          <p><i class="fa-solid fa-envelope-circle-check" style="margin-right:6px;"></i> jurixsistemsas.contacto@gmail.com</p>
+          <p><i class="fa-brands fa-whatsapp" style="margin-right:6px;"></i> +57 3012564208</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MODAL ÉXITO (igual que antes) -->
+  <div class="modal fade" id="modalSuccess" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border:0; border-radius:12px;">
+        <div class="modal-body text-center p-4">
+          <p style="font-size:18px; font-weight:600; margin:0;">✅ Tu mensaje ha sido enviado exitosamente.</p>
+          <button id="btnCerrarModalSuccess" type="button" class="btn mt-4" style="background:#0D3B66; color:#fff;">Cerrar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p style="margin:0;">Jurix & Sistem S.A.S. — Barranquilla, Colombia | jurixsistemsas@outlook.com</p>
+      <p style="margin:6px 0 0">© <span id="year"></span> JURIX & SISTEM S.A.S.</p>
+    </div>
+  </footer>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="container text-center">
-    <p>Jurix & Sistem S.A.S. — Barranquilla, Colombia</p>
-    <p>© <span id="year"></span> JURIX & SISTEM S.A.S.</p>
-  </div>
-</footer>
+  <!-- SCRIPTS -->
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <script>
+  (function(){
+    // === CONFIG ===
+    // 1) Reemplaza por la URL de tu WebApp de Google Apps Script (Implementar -> App web)
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx0c2VZMQAoqAeuF3EXLrIH4kZHN8t3Fey-RWv13bY-wRb81E7LlopHwy8hTqk2mB0/exec"; // <-- REEMPLAZA
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    // 2) ID form y elementos
+    const form = document.getElementById('formContacto');
+    const btn = document.getElementById('btnEnviarContacto');
+    const statusMsg = document.getElementById('statusMsg');
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get("sent") === "true") {
-    const modal = new bootstrap.Modal(document.getElementById("modalSuccess"));
-    modal.show();
-  }
+    // helper: mostrar mensaje temporal
+    function showStatus(text, isError){
+      statusMsg.textContent = text;
+      statusMsg.style.color = isError ? "#b02a37" : "#0d6efd";
+    }
 
-  document.getElementById("btnCerrarModalSuccess").addEventListener("click", () => {
-    window.location.href = "contacto.html";
-  });
-});
-</script>
+    // Validación sencilla
+    function validar(){
+      const nombre = document.getElementById('name').value.trim();
+      const email  = document.getElementById('email').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+      if(!nombre || !email || !mensaje) return false;
+      return true;
+    }
+
+    // Envío por fetch al Apps Script
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+
+      if(!validar()){
+        alert("Por favor completa Nombre, Correo y Mensaje antes de enviar.");
+        return;
+      }
+
+      // Deshabilitar botón y mostrar estado
+      btn.disabled = true;
+      btn.textContent = "Enviando...";
+      showStatus("Enviando mensaje...", false);
+
+      // Preparamos datos en FormData (Apps Script doPost puede leer FormData)
+      const fd = new FormData(form);
+
+      // Intento principal: fetch al WebApp
+      try {
+        const res = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: fd,
+        });
+
+        // Nota: si tu WebApp responde JSON y no tiene CORS problem, puedes leer res.ok
+        // Para robustez, consideramos éxito si no tira excepción.
+        // Mostramos modal de éxito
+        const modal = new bootstrap.Modal(document.getElementById('modalSuccess'));
+        modal.show();
+
+        form.reset();
+        showStatus("Mensaje enviado correctamente.", false);
+
+      } catch (err) {
+        console.error("Error al enviar (fetch):", err);
+        showStatus("Error al enviar. Intentando método alterno...", true);
+
+        // FALLBACK (opcional): intentar enviar por FormSubmit si tienes configurado
+        // Si NO quieres fallback, coméntalo.
+        try {
+          const fallbackAction = "https://formsubmit.co/jurixsistemsas.contacto@gmail.com";
+          form.setAttribute('action', fallbackAction);
+          form.setAttribute('method', 'POST');
+          form.submit();
+        } catch (err2) {
+          console.error("Fallback también falló", err2);
+          alert("No se pudo enviar el mensaje. Intenta más tarde.");
+        }
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Enviar";
+      }
+    });
+
+    // al cerrar modal → recarga limpia la URL
+    document.getElementById("btnCerrarModalSuccess").addEventListener('click', ()=> {
+      window.location.href = "contacto.html";
+    });
+
+    // Si la página llega con ?sent=true (por ejemplo si usas fallback con _next) => mostrar modal
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const params = new URLSearchParams(window.location.search);
+      if(params.get("sent") === "true"){
+        const modal = new bootstrap.Modal(document.getElementById('modalSuccess'));
+        modal.show();
+      }
+    });
+
+  })();
+  </script>
 
 </body>
 </html>
+
 
