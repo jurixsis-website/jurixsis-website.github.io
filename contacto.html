@@ -100,19 +100,47 @@
 
     <!-- FORMULARIO -->
     <div class="form-card">
-      <form id="formContacto" action="https://formsubmit.co/e0106423869532eb22f4e0fc9a5df9f2" method="POST">
-        
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://jurixsis-website.github.io/contacto.html?sent=true">
+     <form id="contactForm">
+  <input type="text" name="nombre" id="nombre" placeholder="Tu nombre" required />
+  <input type="email" name="email" id="email" placeholder="Tu correo" required />
+  <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+  <button type="submit">Enviar</button>
+</form>
 
-        <input class="input" type="text" name="name" placeholder="Nombre completo" required>
-        <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
-        <input class="input" type="text" name="empresa" placeholder="Empresa (opcional)">
-        <input class="input" type="text" name="telefono" placeholder="Teléfono (opcional)">
-        <textarea name="mensaje" placeholder="Escribe tu consulta..." required></textarea>
+<p id="statusMsg"></p>
 
-        <button class="btn" type="submit" style="background:#0D3B66;color:#fff;width:100%;">Enviar</button>
-      </form>
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbx0c2VZMQAoqAeuF3EXLrIH4kZHN8t3Fey-RWv13bY-wRb81E7LlopHwy8hTqk2mB0/exec";
+
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    nombre: document.getElementById("nombre").value,
+    email: document.getElementById("email").value,
+    mensaje: document.getElementById("mensaje").value
+  };
+
+  const status = document.getElementById("statusMsg");
+  status.innerText = "Enviando...";
+
+  try {
+    const res = await fetch(scriptURL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    status.innerText = "¡Mensaje enviado con éxito!";
+    document.getElementById("contactForm").reset();
+
+  } catch (err) {
+    status.innerText = "Error al enviar. Intenta nuevamente.";
+  }
+});
+</script>
+
     </div>
 
     <!-- DATOS DE CONTACTO -->
