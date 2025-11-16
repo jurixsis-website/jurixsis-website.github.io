@@ -198,93 +198,44 @@
 
     <div style="display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px">
       <div class="form-card">
-
-        
        <!-- FORMULARIO CONTACTO -->
-        <!-- <form action="https://formsubmit.co/jurixsistemsas.contacto@gmail.com" method="POST"> -->
-<div style="display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px">
+        <form action="https://formsubmit.co/e0106423869532eb22f4e0fc9a5df9 f2" method="POST">
+  
+        <!-- evita captcha -->
+        <input type="hidden" name="_captcha" value="false">
+      
+        <!-- vuelve a la misma página con ?sent=true -->
+        <input type="hidden" name="_next" value="https://jurixsis-website.github.io/contacto.html?sent=true">
+          
+         <!-- OBSERVACIÓN: este hidden evita captcha -->
+         <input type="hidden" name="_captcha" value="false">
 
-  <!-- COLUMNA IZQUIERDA: FORM -->
-  <div class="form-card">
+         <!-- OBSERVACIÓN: _next vacío para que NO redireccione a otra página -->
+         <input type="hidden" name="_next" value="">
 
-    <form id="formContacto">
-      <input class="input" type="text" name="name" placeholder="Nombre completo" required>
-      <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
-      <input class="input" type="text" name="empresa" placeholder="Empresa (opcional)">
-      <input class="input" type="text" name="telefono" placeholder="Teléfono (opcional)">
-      <textarea name="mensaje" placeholder="Escribe tu consulta..." required></textarea>
+        <input class="input" type="text" name="name" placeholder="Nombre completo" required>
+        <input class="input" type="email" name="email" placeholder="Correo electrónico" required>
+        <input class="input" type="text" name="empresa" placeholder="Empresa (opcional)">
+        <input class="input" type="text" name="telefono" placeholder="Teléfono (opcional)">
+        <textarea name="mensaje" placeholder="Escribe tu consulta..." required></textarea>
 
-      <button id="btnEnviarContacto" class="btn" type="submit" style="background:#0D3B66;color:#fff;">
-        Enviar
-      </button>
-    </form>
+        <!-- OBSERVACIÓN: id del botón para poder disparar el modal -->
+        <button id="btnEnviarContacto" class="btn" type="submit" style="background:#0D3B66;color:#fff;">Enviar</button>
 
-  </div>
+      </form>
 
-  <!-- COLUMNA DERECHA: DATOS DE CONTACTO -->
-  <div>
-      <div class="container my-3" style="font-size:1.1rem; text-align:justify;">
+      </div>
+
+      <div class="container my-4 text-center" style="font-size:1.1rem;">
           <p><i class="fa-solid fa-location-dot"></i> Calle 120 No. 31-86 — Barranquilla, Colombia</p>
           <p><i class="fa-solid fa-envelope"></i> jurixsistemsas@outlook.com</p>
           <p><i class="fa-solid fa-envelope-circle-check"></i> jurixsistemsas.contacto@gmail.com</p>
           <p><i class="fa-brands fa-whatsapp"></i> +57 3012564208</p>
-      </div>
-  </div>
+     </div>
 
-</div>
-        
-<p id="statusMsg"></p>
-
-<script>
-document.getElementById("formContacto").addEventListener("submit", async function(e){
-  e.preventDefault();
-
-  const form = e.target;
-
-  const nombre   = form.name.value.trim();
-  const correo   = form.email.value.trim();
-  const mensaje  = form.mensaje.value.trim();
-
-  if(!nombre || !correo || !mensaje){
-    alert("Por favor completa Nombre, Correo y Mensaje antes de enviar.");
-    return;
-  }
-
-  // enviando datos al Apps Script
-  const scriptURL = "https://script.google.com/macros/s/AKfycbx0c2VZMQAoqAeuF3EXLrIH4kZHN8t3Fey-RWv13bY-wRb81E7LlopHwy8hTqk2mB0/exec";  // <-- Pega aquí tu URL de Google Apps Script
-
-  try{
-    await fetch(scriptURL, { method: "POST", body: new FormData(form) });
-
-    // Mostrar modal de éxito
-    const modalSuccess = new bootstrap.Modal(document.getElementById('modalSuccess'));
-    modalSuccess.show();
-
-    form.reset();
-
-  } catch (error){
-    alert("Error al enviar el mensaje. Intenta nuevamente.");
-  }
-});
-</script>
-
-
-       <!-- MODAL ÉXITO -->
-<div class="modal fade" id="modalSuccess" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style="border:0; border-radius:12px;">
-      <div class="modal-body text-center p-4">
-        <p style="font-size:18px; font-weight:600; margin:0;">✅ Tu mensaje ha sido enviado exitosamente.</p>
-
-        <button id="btnCerrarModalSuccess" type="button" class="btn mt-4" style="background:#0D3B66; color:#fff;">
-          Cerrar
-        </button>
-      </div>
-    </div>
-  </div>
-</div> 
     </div>
   </main>
+
 
   <!-- FOOTER -->
   <footer class="site-footer">
