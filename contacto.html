@@ -119,30 +119,39 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbw49hqs74kbME3RMjWIsT
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const data = {
-    nombre: document.getElementById("nombre").value,
-    empresa: document.getElementById("empresa").value,
-    email: document.getElementById("email").value,
-    telefono: document.getElementById("telefono").value,
-    mensaje: document.getElementById("mensaje").value
-  };
-
   const status = document.getElementById("statusMsg");
   status.innerText = "Enviando...";
 
+  const formData = new URLSearchParams();
+  formData.append("nombre", document.getElementById("nombre").value);
+  formData.append("empresa", document.getElementById("empresa").value);
+  formData.append("email", document.getElementById("email").value);
+  formData.append("telefono", document.getElementById("telefono").value);
+  formData.append("mensaje", document.getElementById("mensaje").value);
+
   try {
-    const res = await fetch(scriptURL, {
+    await fetch(scriptURL, {
       method: "POST",
       mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: formData.toString()
     });
 
     status.innerText = "¡Mensaje enviado con éxito!";
     document.getElementById("contactForm").reset();
 
+    // Opcional: Mostrar el modal de éxito si está configurado
+    const modalEl = document.getElementById("modalSuccess");
+    if (modalEl) {
+      const modal = new bootstrap.Modal(modalEl);
+      modal.show();
+    }
+
   } catch (err) {
     status.innerText = "Error al enviar. Intenta nuevamente.";
+    console.error("Error:", err);
   }
 });
 </script>
