@@ -7,10 +7,8 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
   <!-- CSS Principal -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
@@ -23,6 +21,7 @@
       border:4px solid rgba(205,170,109,0.95);
       box-shadow:0 6px 18px rgba(0,0,0,0.35);
       overflow:hidden;
+      flex-shrink: 0;
     }
     .logo-circle img { width:78%; }
     .brand-title h1 { margin:0; font-size:30px; color:#CDAA6D; font-weight:700; }
@@ -34,23 +33,31 @@
 
     .site-footer {
       background:#000; color:#CDAA6D;
-      padding:22px 0; margin-top:30px;
+      padding:25px 0; margin-top:40px;
     }
 
     .form-card {
       background:#fff;
-      padding:20px;
-      border-radius:10px;
-      border:1px solid #ddd;
-      box-shadow:0 4px 12px rgba(0,0,0,0.07);
+      padding:25px;
+      border-radius:12px;
+      border:1px solid #eef2f6;
+      box-shadow:0 4px 15px rgba(0,0,0,0.05);
     }
 
     .input, textarea {
-      width:100%; padding:10px; margin-bottom:12px;
+      width:100%; padding:12px; margin-bottom:14px;
       border:1px solid #ccc; border-radius:6px;
+      font-size: 15px;
     }
 
-    textarea { min-height:120px; }
+    textarea { min-height:130px; }
+    
+    @media (max-width:992px) {
+      .brand-row { gap:12px; }
+      .logo-circle { width:76px; height:76px; border-width:3px; }
+      .brand-title h1 { font-size:22px; }
+      .contact-grid { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 
@@ -58,7 +65,7 @@
 
 <!-- HEADER -->
 <header class="header-top">
-  <div class="container">
+  <div class="container mb-3">
     <div class="brand-row">
       <div class="logo-circle">
         <img src="assets/img/logo.png" alt="Jurix & Sistem logo">
@@ -70,49 +77,68 @@
     </div>
   </div>
 
+  <!-- MENU CON SOPORTE MÓVIL (Hamburguesa) -->
   <div class="menu-row">
     <div class="container">
-      <nav class="d-flex justify-content-center align-items-center py-2">
-        <a class="nav-link" href="index.html">Inicio</a>
-        <a class="nav-link" href="nosotros.html">Nosotros</a>
-
-        <div class="nav-item dropdown mx-2">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Servicios</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="juridicos.html">Jurídicos</a></li>
-            <li><a class="dropdown-item" href="tecnologicos.html">Tecnológicos</a></li>
+      <nav class="navbar navbar-expand-lg navbar-light py-2">
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item dropdown mx-2">
+              <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+              <ul class="dropdown-menu" aria-labelledby="serviciosDropdown">
+                <li><a class="dropdown-item" href="juridicos.html">Jurídicos</a></li>
+                <li><a class="dropdown-item" href="tecnologicos.html">Tecnológicos</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
+            <li class="nav-item"><a class="nav-link" href="equipo.html">Nuestro Equipo</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
           </ul>
         </div>
-
-        <a class="nav-link" href="clientes.html">Clientes</a>
-        <a class="nav-link" href="equipo.html">Nuestro Equipo</a>
-        <a class="nav-link" href="contacto.html">Contacto</a>
       </nav>
     </div>
   </div>
 </header>
 
 <!-- CONTENIDO -->
-<main class="container">
-  <h2 style="color:var(--azul)">Contáctanos</h2>
+<main class="container my-5">
+  <h2 style="color:#0D3B66; font-weight:700; margin-bottom: 8px;">Contáctanos</h2>
+  <p style="color:#374d63; font-size:16px;">Estamos listos para asesorarte en tus requerimientos legales y tecnológicos.</p>
 
-  <div style="display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px">
+  <div class="contact-grid" style="display:grid; grid-template-columns: 1fr 380px; gap:30px; margin-top:20px">
 
-<!-- FORMULARIO -->
+    <!-- FORMULARIO -->
     <div class="form-card">
-     <form id="contactForm">
-  <input class="input" type="nombre" name="nombre" id="nombre" placeholder="Nombre completo" required>
-  <input class="input" type="empresa" name="empresa" id="empresa" placeholder="Empresa" />       
-  <input class="input" type="email" name="email" id="email" placeholder="Email" required/>
-  <input class="input" type="telefono" name="telefono" id="telefono" placeholder="Telefono" />
-  <textarea name="mensaje" id="mensaje" placeholder="Escribe tu comentario o consulta" required></textarea>
-  <button id="btnEnviarContacto" type="submit" style="background:#0D3B66;color:#fff;border:none;padding:10px 14px;border-radius:6px;width:100%;">Enviar</button>
-    
-  <!-- <button type="submit">Enviar</button> -->
-</form>
+      <form id="contactForm">
+        <input class="input" type="text" name="nombre" id="nombre" placeholder="Nombre completo" required>
+        <input class="input" type="text" name="empresa" id="empresa" placeholder="Empresa (Opcional)" />        
+        <input class="input" type="email" name="email" id="email" placeholder="Correo electrónico" required />
+        <input class="input" type="tel" name="telefono" id="telefono" placeholder="Teléfono / WhatsApp" />
+        <textarea name="mensaje" id="mensaje" placeholder="Escribe tu comentario o consulta..." required></textarea>
+        <button id="btnEnviarContacto" type="submit" style="background:#0D3B66; color:#fff; border:none; padding:12px 20px; border-radius:6px; width:100%; font-weight:600; font-size: 16px;">Enviar mensaje</button>
+      </form>
 
-<p id="statusMsg"></p>
+      <p id="statusMsg" style="margin-top: 15px; font-weight: 600; text-align: center;"></p>
+    </div>
 
+    <!-- DATOS DE CONTACTO -->
+    <div class="p-3" style="font-size:1.05rem; color: #374d63;">
+      <h4 style="color:#0D3B66; font-weight:700; margin-bottom: 20px;">Información de Contacto</h4>
+      <p class="mb-3"><i class="fa-solid fa-location-dot me-2" style="color:#2E86C1;"></i> Calle 120 No. 31-86 — Barranquilla, Colombia</p>
+      <p class="mb-3"><i class="fa-solid fa-envelope me-2" style="color:#2E86C1;"></i> jurixsistemsas@outlook.com</p>
+      <p class="mb-3"><i class="fa-solid fa-envelope-circle-check me-2" style="color:#2E86C1;"></i> jurixsistemsas.contacto@gmail.com</p>
+      <p class="mb-3"><i class="fa-brands fa-whatsapp me-2" style="color:#2E86C1;"></i> +57 ######### </p>
+    </div>
+
+  </div>
+</main>
+
+<!-- SCRIPT DE ENVÍO -->
 <script>
 const scriptURL = "https://script.google.com/macros/s/AKfycbw49hqs74kbME3RMjWIsTsOrArCaeMfA9TX4qjZh2e5DQSf1zt6pK7imEmvsmneudih/exec";
 
@@ -120,7 +146,8 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const status = document.getElementById("statusMsg");
-  status.innerText = "Enviando...";
+  status.style.color = "#0D3B66";
+  status.innerText = "Enviando mensaje...";
 
   const formData = new URLSearchParams();
   formData.append("nombre", document.getElementById("nombre").value);
@@ -139,10 +166,11 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
       body: formData.toString()
     });
 
+    status.style.color = "green";
     status.innerText = "¡Mensaje enviado con éxito!";
     document.getElementById("contactForm").reset();
 
-    // Opcional: Mostrar el modal de éxito si está configurado
+    // Mostrar el modal de éxito si está configurado
     const modalEl = document.getElementById("modalSuccess");
     if (modalEl) {
       const modal = new bootstrap.Modal(modalEl);
@@ -150,32 +178,19 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     }
 
   } catch (err) {
+    status.style.color = "red";
     status.innerText = "Error al enviar. Intenta nuevamente.";
     console.error("Error:", err);
   }
 });
 </script>
 
-    </div>
-
-    <!-- DATOS DE CONTACTO -->
-    <div class="container my-4" style="font-size:1.1rem;">
-      <p><i class="fa-solid fa-location-dot"></i> Calle 120 No. 31-86 — Barranquilla, Colombia</p>
-      <p><i class="fa-solid fa-envelope"></i> jurixsistemsas@outlook.com</p>
-      <p><i class="fa-solid fa-envelope-circle-check"></i> jurixsistemsas.contacto@gmail.com</p>
-      <p><i class="fa-brands fa-whatsapp"></i> ##### </p>
-    </div>
-
-  </div>
-</main>
-
-
 <!-- MODAL ÉXITO -->
 <div class="modal fade" id="modalSuccess" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content" style="border:0; border-radius:12px;">
       <div class="modal-body text-center p-4">
-        <p style="font-size:18px; font-weight:600; margin:0;">
+        <p style="font-size:18px; font-weight:600; margin:0; color:#0D3B66;">
           ✅ Tu mensaje ha sido enviado exitosamente.
         </p>
         <button id="btnCerrarModalSuccess" type="button" class="btn mt-4" style="background:#0D3B66; color:#fff;">
@@ -186,12 +201,11 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   </div>
 </div>
 
-
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="container text-center">
-    <p>Jurix & Sistem S.A.S. — Barranquilla, Colombia</p>
-    <p>© <span id="year"></span> JURIX & SISTEM S.A.S.</p>
+    <p style="margin:0; font-size: 14px;">Jurix & Sistem S.A.S. — Barranquilla, Colombia | jurixsistemsas@outlook.com</p>
+    <p style="margin:6px 0 0; font-size: 13px;">© <span id="year"></span> JURIX & SISTEM S.A.S. Todos los derechos reservados.</p>
   </div>
 </footer>
 
@@ -203,15 +217,12 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get("sent") === "true") {
-    const modal = new bootstrap.Modal(document.getElementById("modalSuccess"));
-    modal.show();
+  const btnCerrar = document.getElementById("btnCerrarModalSuccess");
+  if(btnCerrar) {
+    btnCerrar.addEventListener("click", () => {
+      window.location.href = "contacto.html";
+    });
   }
-
-  document.getElementById("btnCerrarModalSuccess").addEventListener("click", () => {
-    window.location.href = "contacto.html";
-  });
 });
 </script>
 
