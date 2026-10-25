@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JURIX & SISTEM S.A.S. — Inicio</title>
+  <title>JURIX & SISTEM S.A.S. — Nuestro Equipo</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Main CSS (mantén o reemplaza assets/css/style.css con el que te entregué) -->
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Small header-specific styles to ensure the circle logo, hero full-screen and menu layout -->
   <style>
-    /* Header layout adjustments */
     .header-top {
       background: #000;
       color: #fff;
@@ -28,7 +27,7 @@
       align-items:center;
       justify-content:center;
       background: transparent;
-      border: 4px solid rgba(205,170,109,0.95); /* dorado medio */
+      border: 4px solid rgba(205,170,109,0.95);
       box-shadow: 0 6px 18px rgba(0,0,0,0.35);
       overflow:hidden;
       flex-shrink:0;
@@ -38,17 +37,14 @@
       height:auto;
       display:block;
     }
-     /* Titulo principal Jurix & Sistem SAS */
     .brand-title { line-height:1; }
     .brand-title h1 {
       margin:0;
-      font-size:30px; /* tamaño A */
-      color: #CDAA6D; /* dorado */
+      font-size:30px;
+      color: #CDAA6D;
       font-weight:700;
       letter-spacing:0.6px;
     }
-    
-    /* Subtitulo principal Consultorias */
     .brand-title p { 
       margin:0;
       font-size:14px;
@@ -58,10 +54,10 @@
       letter-spacing:1px;
     }
 
-    /* Menu row (white bg with blue bottom border) */
+    /* Menu row */
     .menu-row {
       background:#fff;
-      border-bottom:3px solid #2E86C1; /* azul TOV */
+      border-bottom:3px solid #2E86C1;
     }
     .menu-row .nav-link {
       color:#000;
@@ -73,91 +69,110 @@
       background:transparent;
     }
 
-    /* Hero full-screen */
-    .hero {
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      padding: 40px 0;
-      background: linear-gradient(180deg, #0E2A48 0%, #061628 70%); /* degradado azul petróleo -> azul oscuro */
-      color:#fff;
-    }
-    .hero .left {
-      max-width: 630px;
-    }
-    .hero h2 {
-      font-size:40px;
-      color:#F5F5F5;
-      margin-bottom:12px;
-      line-height:1.05;
-    }
-    .hero p.lead {
-      color: #e6eef6;
-      font-size:16px;
-      margin-bottom:20px;
-    }
-    .btn-primary-cta {
-      background:#CDAA6D;
-      border: 2px solid rgba(205,170,109,0.95);
-      color:#021226;
-      font-weight:700;
-      padding:12px 20px;
-      border-radius:8px;
-    }
-    .btn-primary-cta:hover { background:#b79856; color:#021226; }
-
-    .hero .right img{
-      width:100%;
-      height:auto;
-      border-radius:12px;
-      box-shadow: 0 12px 36px rgba(2,10,24,0.6);
+    /* Hero / Banner Equipo */
+    .page-hero {
+      height: 40vh;
+      background: linear-gradient(180deg, rgba(8,18,32,0.75) 0%, rgba(2,6,12,0.85) 70%),
+                  url('assets/img/hero-equipo.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
     }
 
-    /* Cards */
-    .cards { margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:18px;}
-    .service-card {
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.06);
-      padding:18px;
-      border-radius:12px;
-      color:#eef6ff;
-      min-height:110px;
+    /* Estilos de las tarjetas de equipo (3x3) */
+    .team-card {
+      background: #ffffff;
+      border: 1px solid #eef2f6;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      transition: all 0.3s ease;
+      height: 100%;
+      text-decoration: none !important;
+      display: flex;
+      flex-direction: column;
     }
-    .service-card h3 { color:#CDAA6D; margin-bottom:8px; font-size:18px; }
-    .service-card p { color:#dbeaf8; font-size:14px; }
 
-    /* Why choose us */
-    .why { padding:48px 0; background:#fff; color:#222; border-top:1px solid #eef2f6; border-bottom:1px solid #eef2f6; }
-    .why h3 { color: #0D3B66; margin-bottom:14px; }
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 28px rgba(13, 59, 102, 0.15);
+      border-color: #CDAA6D;
+    }
+
+    .team-img-wrapper {
+      background: linear-gradient(135deg, #0E2A48 0%, #061628 100%);
+      padding: 25px 15px 15px 15px;
+      text-align: center;
+    }
+
+    .team-img-wrapper img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #CDAA6D;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    .team-card-body {
+      padding: 20px 15px;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .team-card-body h5 {
+      color: #0D3B66;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .team-role {
+      color: #2E86C1;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .team-desc {
+      color: #556980;
+      font-size: 13px;
+      margin: 0;
+      line-height: 1.4;
+    }
 
     /* Footer */
     .site-footer {
-      background:#000;
-      color:#CDAA6D;
-      padding:22px 0;
-      margin-top:30px;
+      background: #000;
+      color: #CDAA6D;
+      padding: 25px 0;
+      margin-top: 40px;
     }
 
-    /* Responsive tweaks */
     @media (max-width:992px) {
       .brand-row { gap:12px; }
       .logo-circle { width:76px; height:76px; border-width:3px; }
       .brand-title h1 { font-size:22px; }
-      .hero h2 { font-size:28px; }
-      .hero { padding:30px 0; }
+      .page-hero { height: 30vh; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER TOP (logo + title) -->
+  <!-- HEADER TOP & NAVBAR -->
   <header class="header-top">
-    <div class="container">
+    <div class="container mb-3">
       <div class="brand-row">
         <div class="logo-circle">
           <img src="assets/img/logo.png" alt="Jurix & Sistem logo">
         </div>
-
         <div class="brand-title">
           <h1>JURIX & SISTEM S.A.S.</h1>
           <p>CONSULTORÍAS</p>
@@ -165,142 +180,184 @@
       </div>
     </div>
 
-    <!-- MENU (centered row) -->
+    <!-- MENU CON SOPORTE MÓVIL (Hamburguesa) -->
     <div class="menu-row">
       <div class="container">
-        <nav class="d-flex justify-content-center align-items-center py-2">
-          <a class="nav-link" href="index.html">Inicio</a>
-          <a class="nav-link" href="nosotros.html">Nosotros</a>
-
-          <!-- Servicios dropdown (simple custom dropdown) -->
-          <div class="nav-item dropdown mx-2">
-            <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
-            <ul class="dropdown-menu" aria-labelledby="serviciosDropdown">
-              <li><a class="dropdown-item" href="juridicos.html">Jurídicos</a></li>
-              <li><a class="dropdown-item" href="tecnologicos.html">Tecnológicos</a></li>
+        <nav class="navbar navbar-expand-lg navbar-light py-2">
+          <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+              <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+              <li class="nav-item dropdown mx-2">
+                <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+                <ul class="dropdown-menu" aria-labelledby="serviciosDropdown">
+                  <li><a class="dropdown-item" href="juridicos.html">Jurídicos</a></li>
+                  <li><a class="dropdown-item" href="tecnologicos.html">Tecnológicos</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
+              <li class="nav-item"><a class="nav-link active" href="equipo.html">Nuestro Equipo</a></li>
+              <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
             </ul>
           </div>
-
-          <a class="nav-link" href="clientes.html">Clientes</a>
-          <a class="nav-link" href="equipo.html">Nuestro Equipo</a>
-          <a class="nav-link" href="contacto.html">Contacto</a>
         </nav>
       </div>
     </div>
-  </header> 
+  </header>  
  
-<!-- HERO EQUIPO -->
-<section class="page-hero" style="
-  background-image:url('assets/img/hero-equipo.png');
-  background-size:cover;
-  background-position:center;
-  height:110px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;">
-  <h2 style="font-size:28px; font-weight:700; margin:0;"></h2>
-</section>
+  <!-- HERO EQUIPO -->
+  <section class="page-hero">
+    <div class="container">
+      <h2 style="font-size:34px; font-weight:700; margin-bottom: 8px;">Nuestro Equipo Profesional</h2>
+      <p style="color:#dbeaf8; font-size:16px; margin:0;">El talento interdisciplinario que impulsa tus soluciones legales y tecnológicas.</p>
+    </div>
+  </section>
 
-<section class="container my-5">
-  <div class="row row-cols-1 row-cols-md-4 g-4">
+  <!-- SECCIÓN DE 9 TARJETAS EN COLUMNAS DE 3 X 3 -->
+  <section class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
 
-    <!-- Card 1 
-    <div class="col">
-      <a href="perfil-luis-pimienta.html" target="_blank">
-        <div class="card h-100" style="background:#AAD4F1; border:none;">
-          <img src="assets/img/equipo-luis-pimienta.png" class="card-img-top" alt="Foto">
-          <div class="card-body text-center">
-            <h5 class="card-title" style="font-weight:700;">Luis Carlos Pimienta Henao</h5>
-            <p style="margin:0;">Gerente</p>
-            <p style="margin:0;">Abogado, Especialista Derecho Laboral / Ingeniero de Sistemas</p>
+      <!-- Card 1: Luis Carlos Pimienta Henao -->
+      <div class="col">
+        <a href="perfil-luis-pimienta.html" class="team-card">
+          <div class="team-img-wrapper">
+            <img src="assets/img/equipo-luis-pimienta.png" alt="Foto Luis Carlos Pimienta" onerror="this.src='https://via.placeholder.com/130?text=Foto';">
           </div>
-        </div>
-      </a>
-    </div> -->
-
-    <!-- Card 2 
-    <div class="col">
-      <a href="perfil-paola-tovar.html" target="_blank">
-        <div class="card h-100" style="background:#AAD4F1; border:none;">
-          <img src="assets/img/equipo-paola-tovar.png" class="card-img-top" alt="Foto">
-          <div class="card-body text-center">
-            <h5 class="card-title" style="font-weight:700;">Paola Patricia Tovar Ariza</h5>
-            <p style="margin:0;">Subgerente</p>
-            <p style="margin:0;">Administradora de Empresas</p>
+          <div class="team-card-body">
+            <h5>Luis Carlos Pimienta Henao</h5>
+            <p class="team-role">Gerente</p>
+            <p class="team-desc">Abogado, Especialista en Derecho Laboral e Ingeniero de Sistemas.</p>
           </div>
-        </div>
-      </a>
-    </div> -->
+        </a>
+      </div>
 
-    <!-- Card 3 
-    <div class="col">
-      <a href="perfil-miembro.html" style="text-decoration:none;">
-        <div class="card h-100" style="background:#AAD4F1; border:none;">
-          <img src="assets/img/equipo3.png" class="card-img-top" alt="Foto">
-          <div class="card-body text-center">
-            <h5 class="card-title" style="font-weight:700;">Nombre</h5>
-            <p style="margin:0;">Profesión</p>
+      <!-- Card 2: Paola Patricia Tovar Ariza -->
+      <div class="col">
+        <a href="perfil-paola-tovar.html" class="team-card">
+          <div class="team-img-wrapper">
+            <img src="assets/img/equipo-paola-tovar.png" alt="Foto Paola Patricia Tovar" onerror="this.src='https://via.placeholder.com/130?text=Foto';">
           </div>
-        </div>
-      </a>
-    </div> -->
-
-    <!-- Card 4 
-    <div class="col">
-      <a href="perfil-miembro.html" style="text-decoration:none;">
-        <div class="card h-100" style="background:#AAD4F1; border:none;">
-          <img src="assets/img/equipo4.png" class="card-img-top" alt="Foto">
-          <div class="card-body text-center">
-            <h5 class="card-title" style="font-weight:700;">Nombre</h5>
-            <p style="margin:0;">Profesión</p>
+          <div class="team-card-body">
+            <h5>Paola Patricia Tovar Ariza</h5>
+            <p class="team-role">Subgerente</p>
+            <p class="team-desc">Administradora de Empresas.</p>
           </div>
-        </div>
-      </a>
-    </div> -->
+        </a>
+      </div>
 
-    <!-- Card 5 
-    <div class="col">
-      <a href="perfil-miembro.html" style="text-decoration:none;">
-        <div class="card h-100" style="background:#AAD4F1; border:none;">
-          <img src="assets/img/equipo5.png" class="card-img-top" alt="Foto">
-          <div class="card-body text-center">
-            <h5 class="card-title" style="font-weight:700;">Nombre</h5>
-            <p style="margin:0;">Profesión</p>
+      <!-- Card 3 -->
+      <div class="col">
+        <a href="perfil-miembro.html" class="team-card">
+          <div class="team-img-wrapper">
+            <img src="assets/img/equipo3.png" alt="Foto Miembro" onerror="this.src='https://via.placeholder.com/130?text=Perfil';">
           </div>
-        </div>
-      </a>
-    </div> -->
-
-    <!-- Card 6 
-    <div class="col">
-      <a href="perfil-miembro.html" style="text-decoration:none;">
-        <div class="card h-100" style="background:#AAD4F1; border:none;">
-          <img src="assets/img/equipo6.png" class="card-img-top" alt="Foto">
-          <div class="card-body text-center">
-            <h5 class="card-title" style="font-weight:700;">Nombre</h5>
-            <p style="margin:0;">Profesión</p>
+          <div class="team-card-body">
+            <h5>Próximo Integrante</h5>
+            <p class="team-role">Consultor Legal</p>
+            <p class="team-desc">Especialista en Derecho Comercial y Protección de Datos.</p>
           </div>
-        </div>
-      </a>
-    </div> -->
+        </a>
+      </div>
 
-  </div>
-</section>
+      <!-- Card 4 -->
+      <div class="col">
+        <a href="perfil-miembro.html" class="team-card">
+          <div class="team-img-wrapper">
+            <img src="assets/img/equipo4.png" alt="Foto Miembro" onerror="this.src='https://via.placeholder.com/130?text=Perfil';">
+          </div>
+          <div class="team-card-body">
+            <h5>Próximo Integrante</h5>
+            <p class="team-role">Líder de Desarrollo</p>
+            <p class="team-desc">Ingeniero de Software y Arquitecto Cloud.</p>
+          </div>
+        </a>
+      </div>
 
+      <!-- Card 5 -->
+      <div class="col">
+        <a href="perfil-miembro.html" class="team-card">
+          <div class="team-img-wrapper">
+            <img src="assets/img/equipo5.png" alt="Foto Miembro" onerror="this.src='https://via.placeholder.com/130?text=Perfil';">
+          </div>
+          <div class="team-card-body">
+            <h5>Próximo Integrante</h5>
+            <p class="team-role">Especialista en SST</p>
+            <p class="team-desc">Consultor en Seguridad y Salud en el Trabajo.</p>
+          </div>
+        </a>
+      </div>
 
+      <!-- Card 6 -->
+      <div class="col">
+        <a href="perfil-miembro.html" class="team-card">
+          <div class="team-img-wrapper">
+            <img src="assets/img/equipo6.png" alt="Foto Miembro" onerror="this.src='https://via.placeholder.com/130?text=Perfil';">
+          </div>
+          <div class="team-card-body">
+            <h5>Próximo Integrante</h5>
+            <p class="team-role">Ciberseguridad</p>
+            <p class="team-desc">Auditor de Sistemas y Seguridad Informática.</p>
+          </div>
+        </a>
+      </div>
 
+      <!-- Card 7 -->
+      <div class="col">
+        <a href="perfil-miembro.html" class="team-card">
+          <div class="team-img-wrapper">
+            <img src="assets/img/equipo7.png" alt="Foto Miembro" onerror="this.src='https://via.placeholder.com/130?text=Perfil';">
+          </div>
+          <div class="team-card-body">
+            <h5>Próximo Integrante</h5>
+            <p class="team-role">Consultor Jurídico</p>
+            <p class="team-desc">Abogado Senior en Litigio y Contratación.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="col">
+        <a href="perfil-miembro.html" class="team-card">
+          <div class="team-img-wrapper">
+            <img src="assets/img/equipo8.png" alt="Foto Miembro" onerror="this.src='https://via.placeholder.com/130?text=Perfil';">
+          </div>
+          <div class="team-card-body">
+            <h5>Próximo Integrante</h5>
+            <p class="team-role">Soporte TI</p>
+            <p class="team-desc">Técnico en Infraestructura y Redes.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="col">
+        <a href="perfil-miembro.html" class="team-card">
+          <div class="team-img-wrapper">
+            <img src="assets/img/equipo9.png" alt="Foto Miembro" onerror="this.src='https://via.placeholder.com/130?text=Perfil';">
+          </div>
+          <div class="team-card-body">
+            <h5>Próximo Integrante</h5>
+            <p class="team-role">Asesor Comercial</p>
+            <p class="team-desc">Atención al cliente y gestión de servicios corporativos.</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container text-center">
-      <p style="margin:0;">Jurix & Sistem S.A.S. — Barranquilla, Colombia | jurixsistemsas@outlook.com - jurixsistemsas.contacto@gmail.com | WhatsApp: +57 3012564208</p>
-      <p style="margin:6px 0 0">© <span id="year"></span> JURIX & SISTEM S.A.S.</p>
+      <p style="margin:0; font-size: 14px;">Jurix & Sistem S.A.S. — Barranquilla, Colombia | jurixsistemsas@outlook.com</p>
+      <p style="margin:6px 0 0; font-size: 13px;">© <span id="year"></span> JURIX & SISTEM S.A.S. Todos los derechos reservados.</p>
     </div>
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
